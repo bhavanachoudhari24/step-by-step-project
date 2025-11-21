@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/<USERNAME>/simple-webpage.git'
+        GIT_REPO = 'https://github.com/bhavanachoudhari24/step-by-step-project.git'
         APP_DIR = '/usr/share/nginx/html'
     }
 
@@ -32,4 +32,5 @@ pipeline {
             echo "Deployment Failed!"
         }
     }
+
 }
