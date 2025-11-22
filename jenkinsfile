@@ -8,15 +8,16 @@ pipeline {
 
     stages {
             stage('Checkout Code') {
+                steps{
                 checkout([$class: 'GitSCM',
                         branches: [[name: '*/main']],
                         userRemoteConfigs: [[
                         url: 'https://github.com/bhavanachoudhari24/step-by-step-project.git',
                         credentialsId: 'github-cred'
-        ]]
-    ])
-}
-
+                        ]]
+                      ])
+           }
+        }
         stage('Deploy to EC2 Webserver') {
             steps {
                 sh """
@@ -38,4 +39,5 @@ pipeline {
     }
 
 }
+
 
